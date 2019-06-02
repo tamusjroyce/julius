@@ -20,7 +20,7 @@ This will kick off the emscripten build process in Julius. Then copy julius.js a
 
 ``` Note: Emscriptem emcc (gcc LVMM replacement) produces a.out and a.out.mem. I rename these and change a.out javascript to point to julius.wasm.
 
-Causion: Changes made to this project have a chance of breaking non-unix or non-amd64 based platforms.
+Causion: Changes made to this project have a chance of breaking non-posix (e.g. Windows) and non-amd64 based platforms (e.g. risc).
 ``` 
 
 Julius: Open-Source Large Vocabulary Continuous Speech Recognition Engine
