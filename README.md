@@ -10,13 +10,18 @@ Notes:  There is a fake cpuid.h.copy that gets used for emscripten build. It ret
 
 To build
 
+Follow the instructions at https://emscripten.org/ to setup emscripten sdk and build tools. Be sure to run `source ./emsdk_env.sh` so emcc is available to use.
+
 `cd Julius/JuliusJS`
 
 `npm build`
 
 This will kick off the emscripten build process in Julius. Then copy julius.js and julius.wasm to the correct location.
 
-''' Note: Emscriptem emcc (gcc LVMM replacement) produces a.out and a.out.mem. I rename these and change a.out javascript to point to julius.wasm.''' 
+``` Note: Emscriptem emcc (gcc LVMM replacement) produces a.out and a.out.mem. I rename these and change a.out javascript to point to julius.wasm.
+
+Causion: Changes made to this project have a chance of breaking non-unix or non-amd64 based platforms.
+``` 
 
 Julius: Open-Source Large Vocabulary Continuous Speech Recognition Engine
 ==========================================================================
