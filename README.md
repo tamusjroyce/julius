@@ -1,3 +1,22 @@
+This is a fork focused on supporting building Julius for JuliusJS. https://github.com/tamusjroyce/juliusjs.git has been upgraded (I believe). You can try the demo there. 
+
+JuliusJS (at least my version) no longer works with iphone? Even with installing Chrome under iphone? I would like to work on a cordova specific build to support iphone. As Julius already supports ios. Maybe there is a port already out there?
+
+`git clone --recurse-submodules -j8 https://github.com/tamusjroyce/julius.git`
+
+This will pull in https://github.com/tamusjroyce/juliusjs.git to ./Julius/JuliusJS subfolder.
+
+Notes:  There is a fake cpuid.h.copy that gets used for emscripten build. It returns zero. I also had to override some options that tried to build cpu optimization libraries. Even when they aren't available and wouldn't be compiled in. The way this is done is not ideal and could definately use some improvement!
+
+To build
+
+`cd Julius/JuliusJS`
+`npm build`
+
+This will kick off the emscripten build process in Julius. Then copy julius.js and julius.wasm to the correct location.
+
+''' Note: Emscriptem emcc (gcc LVMM replacement) produces a.out and a.out.mem. I rename these and change a.out javascript to point to julius.wasm.''' 
+
 Julius: Open-Source Large Vocabulary Continuous Speech Recognition Engine
 ==========================================================================
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2530396.svg)](https://doi.org/10.5281/zenodo.2530396)
