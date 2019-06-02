@@ -129,6 +129,13 @@ export LC_ALL
 LANGUAGE=C
 export LANGUAGE
 
+# Remove fake cpuid.h used in emscripten .js build
+if [ $webbuild -eq 1 ] || [ "$1" -eq "--enable-webbuild" ]; then
+  cp libsent/include/cpuid.h.copy libsent/include/cpuid.h
+else
+  rm libsent/include/cpuid.h
+fi
+
 # CDPATH.
 (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 

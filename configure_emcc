@@ -1,0 +1,23 @@
+#!/bin/bash
+
+webbuild=1 emconfigure ./configure --enable-webbuild --disable-option-checking --disable-openmp --disable-zlib --disable-pthread --with-mictype=webaudio
+
+## Choose emcc instead of gcc as the compiler
+#sed -i '/TARGET=libsent.a/c\TARGET=libsent.bc' ./libsent/Makefile
+
+# Remove optimizations
+sed -i 's#src/phmm/calc_dnn_fma.o##g' libsent/Makefile
+sed -i 's#src/phmm/calc_dnn_avx.o##g' libsent/Makefile
+sed -i 's#src/phmm/calc_dnn_sse.o##g' libsent/Makefile
+sed -i 's#src/phmm/calc_dnn_neonv2.o##g' libsent/Makefile
+sed -i 's#src/phmm/calc_dnn_neon.o##g' libsent/Makefile
+
+sed -i 's#: src/phmm/calc_dnn_fma.c##g' libsent/Makefile
+sed -i 's#: src/phmm/calc_dnn_avx.c##g' libsent/Makefile
+sed -i 's#: src/phmm/calc_dnn_sse.c##g' libsent/Makefile
+sed -i 's#: src/phmm/calc_dnn_neonv2.c##g' libsent/Makefile
+sed -i 's#: src/phmm/calc_dnn_neon.c##g' libsent/Makefile
+
+sed -i 's#$(CC) $(CFLAGS) $(CPPFLAGS) -mfma -o $@ -c $<##g' libsent/Makefile
+sed -i 's#$(CC) $(CFLAGS) $(CPPFLAGS) -mavx -o $@ -c $<##g' libsent/Makefile
+sed -i 's#$(CC) $(CFLAGS) $(CPPFLAGS)  -o $@ -c $<##g' libsent/Makefile

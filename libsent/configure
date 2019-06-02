@@ -1372,7 +1372,7 @@ Optional Features:
 Optional Packages:
   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
-  --with-mictype=TYPE     specify mic I/O (oss|alsa|freebsd|coreaudio|sol2|sun4|irix|esd|sp|portaudio|pa-oss|pa-alsa|pa-winmm|pa-dsound|pulseaudio)
+  --with-mictype=TYPE     specify mic I/O (oss|alsa|freebsd|coreaudio|sol2|sun4|irix|esd|sp|portaudio|pa-oss|pa-alsa|pa-winmm|pa-dsound|pulseaudio|webaudio)
   --with-netaudio-dir=DIR DatLink/NetAudio include/lib are in DIR
   --without-sndfile       does not link libsndfile library
 
@@ -5592,6 +5592,12 @@ fi
 
 	SOUNDLIB="$SOUNDLIB -laudio"
 	 ;;
+    webaudio)
+	aldesc="Emscripten JuliusJS Web Browser microphone interface"
+	ADINOBJ="$ADINOBJ src/adin/adin_mic_webaudio.o"
+	$as_echo "#define USE_MIC 1" >>confdefs.h
+
+	;;
 #    osf1)
 #	aldesc="Digital/Unix 4.0"
 #	ADINOBJ=src/adin/adin_mic_osf1.o

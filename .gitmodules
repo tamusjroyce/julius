@@ -1,0 +1,3 @@
+[submodule "juliusjs"]
+	path = juliusjs
+	url = https://github.com/tamusjroyce/juliusjs.git

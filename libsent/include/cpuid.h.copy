@@ -1,0 +1,29 @@
+/* cpuid.h: Define cpuid instruction
+
+Fake - returns no instructions
+*/
+
+#ifndef CPUID_H
+#define CPUID_H
+
+#define cpuid(a,b,c,d,...) __get_cpuid(1, a,b,c,d)
+
+#define bit_SSE 0
+#define bit_AVX 0
+#define bit_FMA 0
+
+static inline int
+__get_cpuid (unsigned int z, unsigned int *a, unsigned int *b, unsigned int *c, unsigned int *d)
+{
+  *a = *b = *c = *d = 0;
+  return 0;
+}
+
+static inline int
+can_set_flag (unsigned long flag)
+{
+  return 0 == 1;
+}
+
+#endif // !CPUID_H
+
