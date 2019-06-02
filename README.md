@@ -11,6 +11,7 @@ Notes:  There is a fake cpuid.h.copy that gets used for emscripten build. It ret
 To build
 
 `cd Julius/JuliusJS`
+
 `npm build`
 
 This will kick off the emscripten build process in Julius. Then copy julius.js and julius.wasm to the correct location.
