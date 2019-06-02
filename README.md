@@ -1,4 +1,4 @@
-This is a fork focused on supporting building Julius for JuliusJS. https://github.com/tamusjroyce/juliusjs.git has been upgraded (I believe). You can try the demo there. 
+This is an alpha fork focused on supporting building Julius for JuliusJS. https://github.com/tamusjroyce/juliusjs.git has been upgraded (I believe). You can try the demo there. 
 
 JuliusJS (at least my version) no longer works with iphone? Even with installing Chrome under iphone? I would like to work on a cordova specific build to support iphone. As Julius already supports ios. Maybe there is a port already out there?
 
