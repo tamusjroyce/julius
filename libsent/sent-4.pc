@@ -7,4 +7,4 @@ Name: Libsent
 Description: Libsent is the auxiliary C library for Julius speech recognition suite
 Version: 4.5
 Libs: -lsent    
-Cflags: -I${prefix}/include -O6 -fomit-frame-pointer 
+Cflags: -I${prefix}/include -g4 

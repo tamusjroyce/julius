@@ -12,7 +12,7 @@ SHELL=/bin/sh
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 CC=/home/steam/programs/emsdk/emscripten/incoming/emcc
-CFLAGS=
+CFLAGS=-g4
 CPPFLAGS= -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\"
 LDFLAGS= 
 RM=/bin/rm -f

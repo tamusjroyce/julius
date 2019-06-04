@@ -1,0 +1,9 @@
+#!/bin/bash
+
+./configure_emcc_debug
+CFLAGS="$CFLAGS -g4" emmake make -j4
+cp a.out.js julius.js
+cp a.out.js.mem julius.wasm
+
+sed -i 's#a.out.js.mem#julius.wasm#g' julius.js
+rm libsent/include/cpuid.h

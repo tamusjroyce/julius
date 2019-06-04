@@ -11,7 +11,7 @@ SHELL=/bin/sh
 
 LIBSENT=../libsent
 CC=/home/steam/programs/emsdk/emscripten/incoming/emcc
-CFLAGS=-O6 -fomit-frame-pointer
+CFLAGS=-g4
 CPPFLAGS=-I$(LIBSENT)/include  -DHAVE_CONFIG_H `$(LIBSENT)/libsent-config --cflags`
 LDFLAGS= -L$(LIBSENT) `$(LIBSENT)/libsent-config --libs` 
 RM=/bin/rm -f

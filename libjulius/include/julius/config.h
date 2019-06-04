@@ -46,7 +46,7 @@
 #define JULIUS_HOSTINFO "x86_64-unknown-linux-gnu"
 
 /// Build information
-#define JULIUS_BUILD_INFO "/home/steam/programs/emsdk/emscripten/incoming/emcc -O6 -fomit-frame-pointer"
+#define JULIUS_BUILD_INFO "/home/steam/programs/emsdk/emscripten/incoming/emcc -g4"
 
 /* Define to empty if the keyword does not work.  */
 /* #undef const */

@@ -12,7 +12,7 @@ SHELL=/bin/sh
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
 
 CC=/home/steam/programs/emsdk/emscripten/incoming/emcc
-CFLAGS=-O6 -fomit-frame-pointer 
+CFLAGS=-g4 
 CPPFLAGS=-Iinclude   -DHAVE_CONFIG_H
 # LDFLAGS= 
 RM=/bin/rm -f

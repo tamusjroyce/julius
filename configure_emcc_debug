@@ -1,6 +1,6 @@
 #!/bin/bash
 
-webbuild=1 emconfigure ./configure --enable-webbuild --enable-words-int --disable-option-checking --disable-openmp --disable-zlib --disable-pthread --with-mictype=webaudio
+webbuild=1 emconfigure ./configure --enable-webbuild --enable-words-int --disable-option-checking --disable-openmp --disable-zlib --disable-pthread --with-mictype=webaudio CFLAGS="-g4" CXXFLAGS="-g4"
 
 ## Choose emcc instead of gcc as the compiler
 #sed -i '/TARGET=libsent.a/c\TARGET=libsent.bc' ./libsent/Makefile
